@@ -1,0 +1,376 @@
+{
+  "basics": {
+    "name": "Numa Canedo",
+    "label": "Staff Software Engineer",
+    "image": "",
+    "email": "mail@numacanedo.com",
+    "phone": "(228) 918 0181",
+    "summary": "● 16 years developing and supporting enterprise applications\n● 16 years working with Java Technologies\n● 13 years of tech-leading expertise working with medium-sized teams\n● 3 years of devops experience working with CI/CD pipelines\n● 5 years of experience with Big Data and Cloud technologies\n● 6 years of experience working with PL/SQL and other Oracle tools\n● 3 years of experience working with ESB architecture\n● 16 years of experience with Basic Linux System Administration\n● Comprehensive understanding of network routing and load balancers\n● Industry Experience includes: Software Development, pharmaceuticals, retail, hospitality, financials and us government industries",
+    "location": {
+      "city": "Atlanta",
+      "region": "GA",
+      "countryCode": "US"
+    },
+    "profiles": []
+  },
+  "skills": [
+    {
+      "name": "Operating Systems",
+      "level": "",
+      "keywords": [
+        "Windows",
+        "GNU/Linux",
+        "Mac OS X"
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "level": "",
+      "keywords": [
+        "JDK 8",
+        "JDK 11",
+        "JDK 17",
+        "Scala",
+        "Groovy",
+        "Bash Scripting",
+        "Python",
+        "GoLang",
+        "JavaScript",
+        "Ansi C",
+        "QBasic"
+      ]
+    },
+    {
+      "name": "Frameworks",
+      "level": "",
+      "keywords": [
+        "Spring",
+        "Spring boot",
+        "Spring data",
+        "Mockito",
+        "Cucumber",
+        "Vavr",
+        "Guava",
+        "Orika mapper",
+        "Hibernate",
+        "Prometheus",
+        "Hystrix",
+        "Jaeger"
+      ]
+    },
+    {
+      "name": "Cloud Platforms",
+      "level": "",
+      "keywords": [
+        "GCP",
+        "AWS",
+        "Pivotal Cloud Foundry (PCF)"
+      ]
+    },
+    {
+      "name": "Databases",
+      "level": "",
+      "keywords": [
+        "Oracle",
+        "MySQL",
+        "Solr",
+        "HBase",
+        "Big Query",
+        "Elastic Search",
+        "PostgreSQL",
+        "Cassandra",
+        "Redis"
+      ]
+    },
+    {
+      "name": "App Servers",
+      "level": "",
+      "keywords": [
+        "Oracle Application Server(OAS),OC4J",
+        "Tomcat",
+        "Web Sphere"
+      ]
+    },
+    {
+      "name": "Tools",
+      "level": "",
+      "keywords": [
+        "IntelliJ",
+        "Enterprise Architect",
+        "Jira",
+        "Fiddler",
+        "Postman",
+        "Confluence"
+      ]
+    },
+    {
+      "name": "Messaging",
+      "level": "",
+      "keywords": [
+        "IBM MQ",
+        "Rabbit MQ",
+        "Apache Kafka",
+        "GCP Pub/Sub"
+      ]
+    },
+    {
+      "name": "Others",
+      "level": "",
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "Gradle",
+        "Grafana",
+        "JSF",
+        "JSP",
+        "EJB",
+        "SOAP & RESTful Web services",
+        "PL/SQL",
+        "Oracle Advanced Queues",
+        "CSS",
+        "XML",
+        "JSON",
+        "HTML",
+        "Linux Bash Scripting",
+        "Lucene",
+        "Hadoop",
+        "ZooKeeper",
+        "Yarn",
+        "Maven",
+        "Jenkins",
+        "GIT",
+        "BitBucket",
+        "BDD"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "Home Depot",
+      "company": "Home Depot",
+      "location": "Atlanta, GA",
+      "position": "Staff Software Engineer",
+      "url": "https://www.homedepot.com/",
+      "startDate": "2020-04-01",
+      "summary": "",
+      "highlights": [
+        "Led features implementation that resulted in $50-80M estimated savings from store returns markdowns of non-assorted SKUs.",
+        "Facilitated design discussions to foster common understanding through documentation, including diagrams and visual representations for the order fulfillment domain.",
+        "Worked on establishing a meeting cadence to share business knowledge previously scattered in cloud and legacy OMS application silos. This effort composed a more cohesive high-performing team.",
+        "Built a common framework to reduce boilerplate code, promote best practices, and consistency with design patterns, and build a foundation where observability and resiliency are first-class citizens.",
+        "Identified and automated manual production tasks, reducing support time and friction.",
+        "Migrated 30+ application repositories from on-prem to the GitHub cloud.",
+        "Research and adoption of curated latest technologies, frameworks, and design patterns.",
+        "Developed and supported high-availability java applications and web services.",
+        "Refactored legacy code with a functional approach and modern coding best practices",
+        "Reviewed pull requests to ensure best practices and high-quality delivery.",
+        "Advocate for clean code, refactoring practices, and DevOps culture adoption.",
+        "Implemented reusable common CI/CD pipelines to improve delivery velocity.",
+        "Integrated CI/CD with different services (Jira, quality hub, Checkmarx, slack, GitHub).",
+        "Redesigned and implemented existing CI/CD flows to improve delivery velocity.",
+        "Strategically architect, design, develop, and implement efficient information systems to support core enterprise functions.",
+        "Analyzed, diagnosed, and remediated application performance issues.",
+        "Documented and diagrammed existing and new applications.",
+        "Improved the unit test coverage for most of the apps the team owns."
+      ],
+      "technologies": "Java, Groovy, Bash Scripting, Docker, Jenkins, Pivotal Cloud Foundry, GCP, Big Query, Pub/Sub, Spring Boot, Cassandra, Kafka, Elastic Search, Redis, Prometheus, Gradle, Swagger, Mockito, BDDs, Github, Jira, Miro, IntelliJ, Go Lang, Pivotal Tracker."
+    },
+    {
+      "name": "NCR",
+      "company": "NCR",
+      "location": "Atlanta, GA",
+      "position": "Senior Software Engineer",
+      "url": "https://www.ncr.com/",
+      "startDate": "2016-08-01",
+      "endDate": "2020-04-30",
+      "summary": "NCR BSP is powered by an omnichannel platform, creating an open ecosystem of retail applications. Retailers can mix and match their choice of applications – whether from NCR, its partners, or 3rd party vendors – to rapidly deliver an exceptional customer experience that unleashes the full potential of retail everywhere.",
+      "highlights": [
+        "Led a mid-sized team of software engineers for the delivery, order, and consumer data management APIs.",
+        "Participated in the full development cycle of high-volume micro-services for BSP products. BSP (Business Services Platform) represents NCR's new Software oriented vision.",
+        "Lead the research and development of core business services using state-of-the-art Big Data and cloud computing technologies.",
+        "Cross-functional data model design of use cases across NCR solutions portfolio. Including the Hospitality, Retail, and Financial industries.",
+        "Design and analysis of non-functional testing verification of Big Data services. Core scenarios included Performance, load, and scalability testing for 20 million consumer records.",
+        "Coordinated BDD(Behavior-Driven-Development) scenarios implementation of many APIs.",
+        "Optimize product documentation to reduce support, training, and service integration efforts. Enable our team to focus on incrementing product quality and designing upcoming versions.",
+        "Work with Product Owners and Architects in requirements grooming. Translate such requirements into development specifications.",
+        "Coordinate integration with other teams and applications across different organizations.",
+        "Automate DevOps tasks such as CI, functional/non-functional verification, fail-over, and data migration.",
+        "Lead the communication with the governance team to adopt the latest features available on the platform.",
+        "Train and support other groups about core and business BSP services.",
+        "Support one of the principal customers, including  DeCA sales demo preparation."
+      ],
+      "technologies": "NCR ODSP, Java, SpringBoot, Spring Data, Solr 7, Lucene, Hadoop, HBase, ZooKeeper, YARN, Swagger, Mockito, Bash Scripting, RESTful Micro Services, Maven, Linux, VirtualBox, Jenkins, GIT, BitBucket Repository, UML, JSON, YAML, Postman, Newman, JMeter, Mockaroo, SCRUM, Jira, HDP 2.5, AWS, Cucumber, BDD."
+    },
+    {
+      "name": "Arthur Lawrence (Deloitte US Contract)",
+      "company": "Arthur Lawrence (Deloitte US Contract)",
+      "location": "Atlanta, GA",
+      "position": "Senior Software Engineer",
+      "url": "https://www2.deloitte.com/us/en.html",
+      "startDate": "2015-04-01",
+      "endDate": "2016-08-31",
+      "summary": "Fully engaged in the implementation of GA Eligibility System, the new Georgia Department of Community Health portal that utilizes an efficient single point of entry that will allow seamless eligibility processing for Georgians requesting assistance. The system will support eligibility for Medicaid and PeachCare for Kids®, as well as several other state-administered assistance programs.",
+      "highlights": [
+        "Responsible for the design and implementation of session handling and concurrency.",
+        "Troubleshooting F5 Load balancer configuration issues.",
+        "Implementation of routing rules to legacy portal during data migration phase for not converted users.",
+        "Integration with state workers portal thru SOAP and Restful web services.",
+        "Implementation of proprietary web and database framework enhancements.",
+        "Analysis, design, implementation and testing of multiple Story Boards.",
+        "Automation of smoke and regression test cases with Selenium Web driver.",
+        "Coordinated defects validation and smoke tests."
+      ],
+      "technologies": "Java, J2EE, EJB, SOAP & RESTful Web services, JSP, JavaScript, CSS, XML, NextGen (Proprietary Struts-like Framework), Oracle 11g,PL/SQL, Fiddler, SOAP UI, Selenium, Big Ip F5 Load Balancer, WebSphere Application Server, IBM Rational Team Concert, Apache Ant, SCRUM Methodology."
+    },
+    {
+      "name": "4THSource (Resolve Systems Client)",
+      "company": "4THSource (Resolve Systems Client)",
+      "location": "Merida, Mexico / Irivine, CA",
+      "position": "Software Architect (Tech Lead)",
+      "url": "https://resolve.io/",
+      "startDate": "2014-08-01",
+      "endDate": "2015-04-30",
+      "summary": "",
+      "highlights": [
+        "Led the Development of a test suite for a state-of-the-art Incident Resolution Software Solution.",
+        "Oversight a mid-sized team of Automation Quality assurance engineers and Java Developers.",
+        "Developed automation tools for test cases generation.",
+        "Software analysis for weak points and test cases design.",
+        "Design and Implementation of test cases for backend Java APIs.",
+        "Troubleshoot Application backend errors."
+      ],
+      "technologies": "Java, Google Development Tools, Fiddler, Centos Linux, MySql, Jira, SCRUM Methodology."
+    },
+    {
+      "name": "4THSource (Express Scripts Client)",
+      "company": "4THSource (Express Scripts Client)",
+      "location": "Merida, Mexico / Memphis, TN",
+      "position": "Software Architect (Tech Lead)",
+      "url": "https://www.express-scripts.com/",
+      "startDate": "2011-06-01",
+      "endDate": "2014-08-31",
+      "summary": "",
+      "highlights": [
+        "Onsite production support of Accredo ESB Application that handled all EDI transactions and most of the interaction between trading partners and clearing houses.",
+        "Mapping EDI Files to XML Format using Interconnect software.",
+        "Designed Java socket-level communication with Clearing Houses.",
+        "Reverse-engineered Oracle advanced queue adapters (Developed by Oracle for Accredo) for new components integration.",
+        "Created Perl Scripts and bash scripts for SFTP communication.",
+        "Reengineered the ESB iHub Application using ABInitio Technology.",
+        "Designed and developed  ABInitio graphs, plans, and scripts.",
+        "Developed and designed a Java Adapter to communicate ABInitio components with Oracle Advance Queues.",
+        "Conducted migrating several Enterprise Applications and web services from the old legacy infrastructure to the new Oracle Application Servers with Disaster Recovery Capabilities.",
+        "Engaged and coordinated networking, load balancing, and security teams to set up network configuration, static routes, F5 Load balancer VIP, and DNS Services.",
+        "Implemented code and configuration adjustments to make applications recoverable in a disaster.",
+        "Engaged in integrating Pharmaceutical Industry legacy applications with the Department of Defense (DoD).",
+        "Coordinated the IBM Data Power offshore development team in India in their time zone as demanded by the project.",
+        "Provided on-site support for projects in the production environment.",
+        "Proactively engaged teams to solve production issues promptly.",
+        "Quick root cause issue identification and routing to appropriate teams for resolution.",
+        "Design of monitoring and reporting tools for development, support, and business teams. Database data extraction to spreadsheets for analysis.",
+        "Responsible for processing a large volume of patient referral data for client migrations.",
+        "Proposed and implemented improvements in legacy services for patient referral, including refactoring from synchronous to asynchronous architecture, preventing concurrency failures.",
+        "Reduced data integrity issues in the production environment by implementing pre-processing rules on ORT Files.",
+        "Working on Java enterprise web services multiple legacy technologies to Mule services.",
+        "Develop bash scripts to SFTP patient information files and send formatted email notifications.",
+        "Led the development of a web application to improve business operations with very tight deadlines.",
+        "Oversight of a mid-sized onshore/offshore team of developers.",
+        "Developed a Java proxy service consuming Mainframe services(Exposed to Data power).",
+        "Developed Backend PL/SQL store procedures.",
+        "Participating in architecture discussions, working with stakeholders to close requirements gaps."
+      ],
+      "technologies": "Java & J2EE, Java QUARTZ, Web services, Windows Server 2003, Unix, Korn Shell Scripting, OAS 10g, PL/SQL, XSD, XML, WSDL, Oracle Advance Queuing, Perl, ABInitio, Static Routes, F5 Load balancer, SOFEA Web services, Mule, Datapower."
+    },
+    {
+      "name": "4THSource (ACH Alert LLC Client)",
+      "company": "4THSource (ACH Alert LLC Client)",
+      "location": "Merida, Mexico",
+      "position": "Software Architect (Tech Lead)",
+      "url": "https://achalert.com/",
+      "startDate": "2010-10-01",
+      "endDate": "2011-06-30",
+      "summary": "",
+      "highlights": [
+        "Developed an application that protects originators of ACH credit against corporate takeover attempts.",
+        "Developed a notification engine with Oracle Advanced Queues and MDBs that sent SMS, Email, and phone alerts.",
+        "Oversight of a team of developers (up to 10 developers).",
+        "Provided data modeling of ACH interchange files.",
+        "Setup and administration of Centos Server for Development and quality assurance environments."
+      ],
+      "technologies": "Java & J2EE, Spring, Struts, Hibernate, Tiles, Java Script, JQuery UI, Centos Linux, Bash Scripting, Oracle PL/SQL, Atlassian Jira."
+    },
+    {
+      "name": "4THSource (Accredo Client)",
+      "company": "4THSource (Accredo Client)",
+      "location": "Merida, Mexico",
+      "position": "Software Engineer",
+      "url": "https://www.accredo.com/",
+      "startDate": "2009-04-01",
+      "endDate": "2010-10-31",
+      "summary": "",
+      "highlights": [
+        "Maintained and developed Oracle PL/SQL Modules. ",
+        "Worked on a legacy application integration using servlets and web services (WSDL).",
+        "Developed Message Driven Beans with Oracle Advance Queues to communicate with multiple applications.",
+        "Developed Web Services and servlets to integrate an existing application with a PEGA BPM Solution.",
+        "Modeled business processes through UML Diagrams."
+      ],
+      "technologies": "Java, J2EE, EJB, MDB Oracle 9i & 10g, PL/SQL, XSD, XML, WSD."
+    },
+    {
+      "name": "Etesa Consorcio Peredo",
+      "company": "Etesa Consorcio Peredo",
+      "location": "Xalapa, Mexico",
+      "position": "Software Architect",
+      "url": "https://www.etesa.com.mx/",
+      "startDate": "2006-09-01",
+      "endDate": "2009-04-30",
+      "summary": "",
+      "highlights": [
+        "Led the development of an ERP for ETESA, enabling the business to run at a national level with improved profit and productivity.",
+        "Designed technical specification requirements through use cases.",
+        "Designed and implemented ERP features for inventory, purchasing, sales, and human resources modules.",
+        "Designed and developed an application to provide statistics and graphing for ERPs development",
+        "Analyzed, proposed, and implemented performance improvements.",
+        "Optimization of big-data import and migration processes for consumer information.",
+        "Automated the deployment process of enterprise java applications to OAS.",
+        "Oracle application server administration."
+      ],
+      "technologies": "Java & J2EE, XSD, and XML, Oracle ADF, UNIX, Bash Scripting, Enterprise Architect, Oracle Designer."
+    },
+    {
+      "name": "Todo Empresas SA de CV",
+      "company": "Todo Empresas SA de CV",
+      "location": "Xalapa, Mexico",
+      "position": "Systems Administrator",
+      "startDate": "2006-01-01",
+      "endDate": "2006-09-30",
+      "summary": "",
+      "highlights": [
+        "General networking services administration.",
+        "LAN infrastructure design and implementation.",
+        "Setup and support for multiple Linux Servers(Debian, Centos, Suse)."
+      ],
+      "technologies": "Multiple Linux distributions, PHP, MySQL, Samba, Apache, Sendmail, Iptables, Java, PHP, MySQL, Macromedia Flash, Gimp."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Instituto Tecnologico Superior De Xalapa",
+      "area": "Systems Engineering",
+      "studyType": "Bachelor's of Science",
+      "startDate": "2001-08-01",
+      "endDate": "2006-07-01"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    }
+  ]
+}
