@@ -10,5 +10,6 @@ LABEL maintainer="Kelvin Tay <kelvintaywl@gmail.com>"
 
 RUN npm install -g resume-cli
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
