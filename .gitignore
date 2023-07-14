@@ -1,4 +1,6 @@
+.DS_Store
 .idea
 node_modules
 package-lock.json
 public
+jsonresume-theme-el-santo-0.0.0.tgz
