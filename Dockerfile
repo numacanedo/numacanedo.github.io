@@ -9,6 +9,6 @@ LABEL homepage="https://github.com/kelvintaywl/jsonresume-github-page"
 LABEL maintainer="Kelvin Tay <kelvintaywl@gmail.com>"
 
 RUN npm install -g resume-cli
-COPY entrypoint.sh entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
