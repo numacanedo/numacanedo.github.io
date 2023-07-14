@@ -4,6 +4,9 @@ THEME=${1}
 RESUME=${2}
 OUTPUT=${3}
 
+ls -lsah
+ls -lsah /
+
 THEME_PACKAGE=jsonresume-theme-${THEME}
 echo "Installing theme: ${THEME}"
 
