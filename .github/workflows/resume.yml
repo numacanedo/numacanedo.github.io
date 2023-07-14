@@ -17,7 +17,7 @@ jobs:
     needs: check_run
     steps:
       - uses: actions/checkout@v2
-      - uses: kelvintaywl/action-jsonresume-export@v1
+      - uses: numacanedo/numacanedo.github.io@v1
         name: Export resume as HTML
         with:
           theme: el-santo
