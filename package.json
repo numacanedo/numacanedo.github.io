@@ -1,0 +1,12 @@
+{
+  "name": "jsonresume-theme-el-santo",
+  "version": "0.0.0",
+  "description": "A simple yet elegant theme for JSON Resume",
+  "author": "Numa Canedo",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "help": "^3.0.2",
+    "jsonresume-theme-el-santo": "^0.0.6"
+  },
+  "main": "index.js"
+}
