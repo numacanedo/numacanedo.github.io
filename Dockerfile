@@ -12,4 +12,7 @@ RUN npm install -g resume-cli
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 
+RUN ls -lsah
+RUN ls -lsah /
+
 ENTRYPOINT ["/entrypoint.sh"]
