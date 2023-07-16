@@ -1,0 +1,14 @@
+{{#if resume.work.length}}
+    <div class="sectionBlock">
+        <div class='sectionContent'>
+            <span class='sectionName'>EXPERIENCE OVERVIEW</span>
+            {{#each resume.work}}
+                <div class='blockHeader'>
+                    {{#if company}}<b>{{company}}</b>{{/if}}
+                    {{#if position}} - {{position}}{{/if}}
+                    {{> dates }}{{> duration }}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
