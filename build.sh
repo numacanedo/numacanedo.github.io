@@ -10,10 +10,10 @@ npm install
 npm i -g @vercel/ncc
 
 echo "Building..."
-ncc build index.js -m
+ncc build render.js -m
 
 echo "Cleaning build files..."
-cp dist/index.js main.js
+cp dist/render.js main.js
 rm -fR dist
 
 echo "Done."

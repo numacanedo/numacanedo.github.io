@@ -2,6 +2,7 @@ const fileSystem = require('fs');
 const moment = require('moment');
 const core = require('@actions/core');
 const path = require('path');
+const puppeteer = require("puppeteer");
 const docs = 'docs';
 
 let resume = fileSystem.readFileSync(core.getInput('resume') || 'resume.json');
@@ -11,7 +12,7 @@ if (!fileSystem.existsSync(docs)) {
     fileSystem.mkdirSync(docs);
 }
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
-pdf(html).then();
+pdf(path.join(docs, 'resume.pdf'), html);
 
 function render(resume) {
     const handlebars = require("handlebars");
@@ -55,26 +56,27 @@ function render(resume) {
     });
 }
 
-async function pdf(resume) {
-    const puppeteer = require('puppeteer');
+function pdf(pdfFile, resume) {
+    (async () => {
+        const puppeteer = require('puppeteer');
 
-    const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({headless: 'new'});
+        const page = await browser.newPage();
 
-    const page = await browser.newPage();
+        await page.emulateMediaType('print');
 
-    await page.emulateMediaType('screen');
-    await page.goto(
-        `data:text/html;base64,${btoa(unescape(encodeURIComponent(resume)))}`,
-        { waitUntil: 'networkidle0' },
-    );
+        await page.goto(
+            `data:text/html;charset=UTF-8,${encodeURIComponent(html)}`,
+            {waitUntil: "networkidle0"}
+        );
 
-    await page.pdf({
-        path: 'resume.pdf',
-        format: 'Letter',
-        printBackground: true
-    });
+        await page.pdf({
+            path: pdfFile,
+            format: 'Letter'
+        });
 
-    await browser.close();
+        await browser.close();
+    })();
 }
 
 function calculateDuration(startDate, endDate) {
