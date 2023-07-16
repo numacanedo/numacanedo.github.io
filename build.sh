@@ -7,6 +7,7 @@ rm -fR node_modules
 
 echo "Installing modules..."
 npm install
+node node_modules/puppeteer/install.js
 npm i -g @vercel/ncc
 
 echo "Building..."
