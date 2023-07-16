@@ -21,10 +21,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Export resume
-        uses: numacanedo/numacanedo.github.io@v1
-        with:
-          resume: resume.json
+      - name: install puppeteer libraries
+        run: |
+          node main.js
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
