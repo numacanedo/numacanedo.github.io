@@ -12,7 +12,6 @@ if (!fileSystem.existsSync('docs')) {
 }
 fileSystem.writeFileSync('docs/index.html', render(resume));
 
-
 function render(resume) {
     let path = require('path');
     let handlebars = require("handlebars");
