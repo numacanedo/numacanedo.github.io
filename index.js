@@ -1,3 +1,5 @@
+render();
+
 function render() {
     let fileSystem = require("fs");
     let path = require('path');
@@ -42,7 +44,6 @@ function render() {
     if (!fileSystem.existsSync('docs')) {
         fileSystem.mkdirSync('docs');
     }
-
     fileSystem.writeFileSync('docs/index.html', index);
 }
 
@@ -61,7 +62,7 @@ function pad(duration, unit) {
 }
 
 function format(date) {
-    var moment = require('moment');
+    let moment = require('moment');
 
     return isValid(date)
         ? moment(date).format("MMM YYYY")
