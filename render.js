@@ -1,20 +1,20 @@
 const fileSystem = require('fs');
+const moment = require('moment');
 const core = require('@actions/core');
+const path = require('path');
+const docs = 'docs';
 
-let resumeInput = core.getInput('resume');
-let resumeFile = resumeInput === '' ? 'resume.json' : resumeInput;
-console.log("Reading file: " + resumeFile);
+let resume = fileSystem.readFileSync(core.getInput('resume') || 'resume.json');
+let html = render(resume);
 
-let resume = fileSystem.readFileSync(resumeFile);
-
-if (!fileSystem.existsSync('docs')) {
-    fileSystem.mkdirSync('docs');
+if (!fileSystem.existsSync(docs)) {
+    fileSystem.mkdirSync(docs);
 }
-fileSystem.writeFileSync('docs/index.html', render(resume));
+fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
+pdf(html).then();
 
 function render(resume) {
-    let path = require('path');
-    let handlebars = require("handlebars");
+    const handlebars = require("handlebars");
 
     fileSystem
         .readdirSync('partials')
@@ -49,15 +49,35 @@ function render(resume) {
         return '.' === text.slice(-1) ? text : text + '.';
     });
 
-    return handlebars.compile(fileSystem.readFileSync(path.join(__dirname, 'resume.hbs'), "utf-8"))({
-        css: fileSystem.readFileSync(path.join(__dirname, 'style.css'), "utf-8"),
+    return handlebars.compile(fileSystem.readFileSync('resume.hbs', "utf-8"))({
+        css: fileSystem.readFileSync('style.css', "utf-8"),
         resume: JSON.parse(resume)
     });
 }
 
-function calculateDuration(startDate, endDate) {
-    let moment = require('moment');
+async function pdf(resume) {
+    const puppeteer = require('puppeteer');
 
+    const browser = await puppeteer.launch();
+
+    const page = await browser.newPage();
+
+    await page.emulateMediaType('screen');
+    await page.goto(
+        `data:text/html;base64,${btoa(unescape(encodeURIComponent(resume)))}`,
+        { waitUntil: 'networkidle0' },
+    );
+
+    await page.pdf({
+        path: 'resume.pdf',
+        format: 'Letter',
+        printBackground: true
+    });
+
+    await browser.close();
+}
+
+function calculateDuration(startDate, endDate) {
     let startMoment = isValid(startDate) ? moment(startDate) : moment();
     let endMoment = isValid(endDate) ? moment(endDate) : moment();
 
@@ -65,13 +85,10 @@ function calculateDuration(startDate, endDate) {
 }
 
 function pad(duration, unit) {
-    let newDuration = duration ? ''.concat(duration).concat(unit) : ''
-    return newDuration.padStart(unit.length + 2, ' ');
+    return `${duration}${unit}`.padStart(unit.length + 2, ' ');
 }
 
 function format(date) {
-    let moment = require('moment');
-
     return isValid(date)
         ? moment(date).format("MMM YYYY")
         : date;
