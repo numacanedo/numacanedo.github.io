@@ -1,6 +1,11 @@
 const fileSystem = require('fs');
+const core = require('@actions/core');
 
-let resume = fileSystem.readFileSync(process.argv[2]);
+let resumeFile = process.argv[2] ? process.argv[2] : core.getInput('resume');
+console.log("Reading file: " + resumeFile);
+
+let resume = fileSystem.readFileSync(resumeFile);
+console.log(resume.toString());
 
 if (!fileSystem.existsSync('docs')) {
     fileSystem.mkdirSync('docs');
