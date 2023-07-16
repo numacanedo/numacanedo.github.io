@@ -1,5 +1,6 @@
 .DS_Store
 .idea
 docs
+dist
 index.html
 node_modules
