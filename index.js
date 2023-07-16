@@ -16,8 +16,8 @@ if (!fileSystem.existsSync(docs)) {
 console.log("Persisting resume...");
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
-console.log("Creating pdf...");
-pdf(path.join(docs, 'resume.pdf'), html);
+// console.log("Creating pdf...");
+// pdf(path.join(docs, 'resume.pdf'), html);
 
 function index(resume) {
     const handlebars = require("handlebars");
