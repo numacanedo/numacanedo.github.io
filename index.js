@@ -16,8 +16,8 @@ if (!fileSystem.existsSync(docs)) {
 console.log("Persisting resume...");
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
-// console.log("Creating pdf...");
-// pdf(path.join(docs, 'resume.pdf'), html);
+console.log("Creating pdf...");
+pdf(path.join(docs, 'resume.pdf'), html);
 
 function index(resume) {
     const handlebars = require("handlebars");
@@ -65,16 +65,23 @@ function pdf(pdfFile, resume) {
     (async () => {
         const puppeteer = require('puppeteer');
 
+        console.log("Launching browser...");
         const browser = await puppeteer.launch({headless: 'new'});
 
+        console.log("Creating page...");
         const page = await browser.newPage();
         await page.emulateMediaType('print');
+
+        console.log("Opening resume...");
         await page.goto(`data:text/html;charset=UTF-8,${encodeURIComponent(html)}`);
+
+        console.log("Printing resume...");
         await page.pdf({
             path: pdfFile,
             format: 'Letter'
         });
 
+        console.log("Closing browser...");
         await browser.close();
     })();
 }
