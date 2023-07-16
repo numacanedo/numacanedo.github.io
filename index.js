@@ -1,3 +1,5 @@
+render();
+
 function render() {
     let fileSystem = require("fs");
     let path = require('path');
