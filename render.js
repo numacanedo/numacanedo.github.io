@@ -1,32 +1,31 @@
 const fileSystem = require('fs');
 const moment = require('moment');
-const core = require('@actions/core');
 const path = require('path');
 const docs = 'docs';
 
-let resume = fileSystem.readFileSync(core.getInput('resume') || 'resume.json');
+let resume = fileSystem.readFileSync('resume.json');
 
-console.log("Rendering resume...");
+console.log('Rendering resume...');
 let html = render(resume);
 
 if (!fileSystem.existsSync(docs)) {
     fileSystem.mkdirSync(docs);
 }
 
-console.log("Persisting resume...");
+console.log('Persisting resume...');
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
-console.log("Creating pdf...");
+console.log('Creating pdf...');
 pdf(path.join(docs, 'resume.pdf'), html);
 
 function render(resume) {
-    const handlebars = require("handlebars");
+    const handlebars = require('handlebars');
 
     fileSystem
         .readdirSync('partials')
         .forEach(function (filename) {
             handlebars.registerPartial(
-                filename.split(".")[0],
+                filename.split('.')[0],
                 fileSystem.readFileSync(path.join('partials', filename), 'utf8'));
         });
 
@@ -55,8 +54,8 @@ function render(resume) {
         return '.' === text.slice(-1) ? text : text + '.';
     });
 
-    return handlebars.compile(fileSystem.readFileSync('resume.hbs', "utf-8"))({
-        css: fileSystem.readFileSync('style.css', "utf-8"),
+    return handlebars.compile(fileSystem.readFileSync('resume.hbs', 'utf-8'))({
+        css: fileSystem.readFileSync('style.css', 'utf-8'),
         resume: JSON.parse(resume)
     });
 }
@@ -65,25 +64,25 @@ function pdf(pdfFile, resume) {
     (async () => {
         const puppeteer = require('puppeteer');
 
-        console.log("Launching browser...");
+        console.log('Launching browser...');
         const browser = await puppeteer.launch({
             headless: 'new'
         });
 
-        console.log("Creating page...");
+        console.log('Creating page...');
         const page = await browser.newPage();
         await page.emulateMediaType('print');
 
-        console.log("Opening resume...");
+        console.log('Opening resume...');
         await page.goto(`data:text/html;charset=UTF-8,${encodeURIComponent(resume)}`);
 
-        console.log("Printing resume...");
+        console.log('Printing resume...');
         await page.pdf({
             path: pdfFile,
             format: 'Letter'
         });
 
-        console.log("Closing browser...");
+        console.log('Closing browser...');
         await browser.close();
     })();
 }
@@ -101,7 +100,7 @@ function pad(duration, unit) {
 
 function format(date) {
     return isValid(date)
-        ? moment(date).format("MMM YYYY")
+        ? moment(date).format('MMM YYYY')
         : date;
 }
 
