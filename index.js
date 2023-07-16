@@ -1,7 +1,22 @@
-render();
+const https = require("https");
+const fileSystem = require("fs");
+https
+    .get('https://gist.githubusercontent.com/numacanedo/8826eee009df27288db9ef2784e70bda/raw', resp => {
+        let resume = '';
 
-function render() {
-    let fileSystem = require("fs");
+        resp.on("data", chunk => {
+            resume += chunk;
+        });
+
+        resp.on("end", () => {
+            if (!fileSystem.existsSync('docs')) {
+                fileSystem.mkdirSync('docs');
+            }
+            fileSystem.writeFileSync('docs/index.html', render(resume));
+        });
+    });
+
+function render(resume) {
     let path = require('path');
     let handlebars = require("handlebars");
 
@@ -38,15 +53,10 @@ function render() {
         return '.' === text.slice(-1) ? text : text + '.';
     });
 
-    let index = handlebars.compile(fileSystem.readFileSync(path.join(__dirname, 'resume.hbs'), "utf-8"))({
+    return handlebars.compile(fileSystem.readFileSync(path.join(__dirname, 'resume.hbs'), "utf-8"))({
         css: fileSystem.readFileSync(path.join(__dirname, 'style.css'), "utf-8"),
-        resume: JSON.parse(fileSystem.readFileSync(path.join(__dirname, 'resume.json'), "utf-8"))
+        resume: JSON.parse(resume)
     });
-
-    if (!fileSystem.existsSync('docs')) {
-        fileSystem.mkdirSync('docs');
-    }
-    fileSystem.writeFileSync('docs/index.html', index);
 }
 
 function calculateDuration(startDate, endDate) {
