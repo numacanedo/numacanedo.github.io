@@ -2,11 +2,10 @@ const fileSystem = require('fs');
 const moment = require('moment');
 const core = require('@actions/core');
 const path = require('path');
-const puppeteer = require("puppeteer");
 const docs = 'docs';
 
 let resume = fileSystem.readFileSync(core.getInput('resume') || 'resume.json');
-let html = render(resume);
+let html = index(resume);
 
 if (!fileSystem.existsSync(docs)) {
     fileSystem.mkdirSync(docs);
@@ -14,7 +13,7 @@ if (!fileSystem.existsSync(docs)) {
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 pdf(path.join(docs, 'resume.pdf'), html);
 
-function render(resume) {
+function index(resume) {
     const handlebars = require("handlebars");
 
     fileSystem
