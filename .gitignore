@@ -2,5 +2,5 @@
 .idea
 docs
 dist
-render.html
 node_modules
+package-lock.json
