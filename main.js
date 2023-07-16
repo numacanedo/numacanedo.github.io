@@ -118,6 +118,9 @@ function index(resume) {
 
 function pdf(pdfFile, resume) {
     (async () => {
+        const {downloadBrowser} = __nccwpck_require__(6685);
+        downloadBrowser();
+
         const puppeteer = __nccwpck_require__(6186);
 
         console.log("Launching browser...");
@@ -11152,7 +11155,7 @@ let parseJson;
 
 const loadJson = function loadJson(filepath, content) {
   if (parseJson === undefined) {
-    parseJson = __nccwpck_require__(9536);
+    parseJson = __nccwpck_require__(3890);
   }
 
   try {
@@ -31573,7 +31576,7 @@ module.exports = filepath => {
 
 /***/ }),
 
-/***/ 9536:
+/***/ 3890:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -41128,7 +41131,7 @@ function through (write, end, opts) {
 "use strict";
 
 
-var punycode = __nccwpck_require__(5477);
+var punycode = __nccwpck_require__(4577);
 var mappingTable = __nccwpck_require__(2020);
 
 var PROCESSING_OPTIONS = {
@@ -43400,7 +43403,7 @@ exports.parseURL = __nccwpck_require__(3032).parseURL;
 
 "use strict";
 
-const punycode = __nccwpck_require__(5477);
+const punycode = __nccwpck_require__(4577);
 const tr46 = __nccwpck_require__(7801);
 
 const specialSchemes = {
@@ -51959,7 +51962,7 @@ module.exports = require("process");
 
 /***/ }),
 
-/***/ 5477:
+/***/ 4577:
 /***/ ((module) => {
 
 "use strict";
@@ -52532,7 +52535,7 @@ const browser_data_js_1 = __nccwpck_require__(9135);
 const Cache_js_1 = __nccwpck_require__(7663);
 const detectPlatform_js_1 = __nccwpck_require__(3913);
 const install_js_1 = __nccwpck_require__(2065);
-const launch_js_1 = __nccwpck_require__(5668);
+const launch_js_1 = __nccwpck_require__(5477);
 /**
  * @public
  */
@@ -54218,7 +54221,7 @@ function getDownloadUrl(browser, platform, buildId, baseUrl) {
 
 /***/ }),
 
-/***/ 5668:
+/***/ 5477:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -54610,7 +54613,7 @@ exports.TimeoutError = TimeoutError;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Cache = exports.makeProgressCallback = exports.CLI = exports.createProfile = exports.ChromeReleaseChannel = exports.BrowserPlatform = exports.Browser = exports.resolveBuildId = exports.detectBrowserPlatform = exports.uninstall = exports.canDownload = exports.getInstalledBrowsers = exports.install = exports.Process = exports.WEBDRIVER_BIDI_WEBSOCKET_ENDPOINT_REGEX = exports.CDP_WEBSOCKET_ENDPOINT_REGEX = exports.TimeoutError = exports.computeSystemExecutablePath = exports.computeExecutablePath = exports.launch = void 0;
-var launch_js_1 = __nccwpck_require__(5668);
+var launch_js_1 = __nccwpck_require__(5477);
 Object.defineProperty(exports, "launch", ({ enumerable: true, get: function () { return launch_js_1.launch; } }));
 Object.defineProperty(exports, "computeExecutablePath", ({ enumerable: true, get: function () { return launch_js_1.computeExecutablePath; } }));
 Object.defineProperty(exports, "computeSystemExecutablePath", ({ enumerable: true, get: function () { return launch_js_1.computeSystemExecutablePath; } }));
@@ -66177,7 +66180,7 @@ const CustomQueryHandler_js_1 = __nccwpck_require__(6135);
 const PierceQueryHandler_js_1 = __nccwpck_require__(6821);
 const PQueryHandler_js_1 = __nccwpck_require__(8539);
 const TextQueryHandler_js_1 = __nccwpck_require__(1314);
-const XPathQueryHandler_js_1 = __nccwpck_require__(3890);
+const XPathQueryHandler_js_1 = __nccwpck_require__(7874);
 exports.BUILTIN_QUERY_HANDLERS = Object.freeze({
     aria: AriaQueryHandler_js_1.ARIAQueryHandler,
     pierce: PierceQueryHandler_js_1.PierceQueryHandler,
@@ -71797,7 +71800,7 @@ _WebWorker_executionContext = new WeakMap(), _WebWorker_client = new WeakMap(), 
 
 /***/ }),
 
-/***/ 3890:
+/***/ 7874:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -77925,6 +77928,119 @@ const getConfiguration = () => {
 };
 exports.getConfiguration = getConfiguration;
 //# sourceMappingURL=getConfiguration.js.map
+
+/***/ }),
+
+/***/ 6685:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+"use strict";
+
+/**
+ * Copyright 2020 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.downloadBrowser = void 0;
+const browsers_1 = __nccwpck_require__(9654);
+const revisions_js_1 = __nccwpck_require__(9405);
+const getConfiguration_js_1 = __nccwpck_require__(9309);
+/**
+ * @internal
+ */
+const supportedProducts = {
+    chrome: 'Chrome',
+    firefox: 'Firefox Nightly',
+};
+/**
+ * @internal
+ */
+async function downloadBrowser() {
+    overrideProxy();
+    const configuration = (0, getConfiguration_js_1.getConfiguration)();
+    if (configuration.skipDownload) {
+        logPolitely('**INFO** Skipping browser download as instructed.');
+        return;
+    }
+    const downloadBaseUrl = configuration.downloadBaseUrl;
+    const platform = (0, browsers_1.detectBrowserPlatform)();
+    if (!platform) {
+        throw new Error('The current platform is not supported.');
+    }
+    const product = configuration.defaultProduct;
+    const browser = productToBrowser(product);
+    const unresolvedBuildId = configuration.browserRevision || revisions_js_1.PUPPETEER_REVISIONS[product] || 'latest';
+    const buildId = await (0, browsers_1.resolveBuildId)(browser, platform, unresolvedBuildId);
+    // TODO: deprecate downloadPath in favour of cacheDirectory.
+    const cacheDir = configuration.downloadPath ?? configuration.cacheDirectory;
+    try {
+        const result = await (0, browsers_1.install)({
+            browser,
+            cacheDir,
+            platform,
+            buildId,
+            downloadProgressCallback: (0, browsers_1.makeProgressCallback)(browser, buildId),
+            baseUrl: downloadBaseUrl,
+        });
+        logPolitely(`${supportedProducts[product]} (${result.buildId}) downloaded to ${result.path}`);
+    }
+    catch (error) {
+        console.error(`ERROR: Failed to set up ${supportedProducts[product]} r${buildId}! Set "PUPPETEER_SKIP_DOWNLOAD" env variable to skip download.`);
+        console.error(error);
+        process.exit(1);
+    }
+}
+exports.downloadBrowser = downloadBrowser;
+function productToBrowser(product) {
+    switch (product) {
+        case 'chrome':
+            return browsers_1.Browser.CHROME;
+        case 'firefox':
+            return browsers_1.Browser.FIREFOX;
+    }
+    return browsers_1.Browser.CHROME;
+}
+/**
+ * @internal
+ */
+function logPolitely(toBeLogged) {
+    const logLevel = process.env['npm_config_loglevel'] || '';
+    const logLevelDisplay = ['silent', 'error', 'warn'].indexOf(logLevel) > -1;
+    // eslint-disable-next-line no-console
+    if (!logLevelDisplay) {
+        console.log(toBeLogged);
+    }
+}
+/**
+ * @internal
+ */
+function overrideProxy() {
+    // Override current environment proxy settings with npm configuration, if any.
+    const NPM_HTTPS_PROXY = process.env['npm_config_https_proxy'] || process.env['npm_config_proxy'];
+    const NPM_HTTP_PROXY = process.env['npm_config_http_proxy'] || process.env['npm_config_proxy'];
+    const NPM_NO_PROXY = process.env['npm_config_no_proxy'];
+    if (NPM_HTTPS_PROXY) {
+        process.env['HTTPS_PROXY'] = NPM_HTTPS_PROXY;
+    }
+    if (NPM_HTTP_PROXY) {
+        process.env['HTTP_PROXY'] = NPM_HTTP_PROXY;
+    }
+    if (NPM_NO_PROXY) {
+        process.env['NO_PROXY'] = NPM_NO_PROXY;
+    }
+}
+//# sourceMappingURL=install.js.map
 
 /***/ }),
 

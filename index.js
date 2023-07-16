@@ -63,6 +63,9 @@ function index(resume) {
 
 function pdf(pdfFile, resume) {
     (async () => {
+        const {downloadBrowser} = require('puppeteer/internal/node/install.js');
+        downloadBrowser();
+
         const puppeteer = require('puppeteer');
 
         console.log("Launching browser...");
