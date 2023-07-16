@@ -20,7 +20,7 @@ echo "Pushing changes..."
 git add .
 git commit -m 'New resume action build'
 git tag -d v1
-git tag -a -m 'v1'
+git tag -a -m 'v1' v1
 git push --follow-tags
 
 echo "Done."
