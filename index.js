@@ -66,7 +66,14 @@ function pdf(pdfFile, resume) {
         const puppeteer = require('puppeteer');
 
         console.log("Launching browser...");
-        const browser = await puppeteer.launch({headless: 'new'});
+        const browser = await puppeteer.launch({
+            headless: true,
+            args: [
+                `--no-sandbox`,
+                `--disable-setuid-sandbox`
+            ],
+            slowMo: 50
+        });
 
         console.log("Creating page...");
         const page = await browser.newPage();
