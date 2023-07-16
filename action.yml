@@ -1,5 +1,11 @@
 name: 'Export resume'
 description: 'GitHub Action to export your resume'
+inputs:
+  theme:
+    description: |
+      Resume json file
+    required: true
+    default: 'resume.json'
 runs:
   using: 'node16'
   main: 'index.js'
