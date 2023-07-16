@@ -1,5 +1,3 @@
-console.log(render());
-
 function render() {
     let fileSystem = require("fs");
     let path = require('path');
@@ -36,10 +34,16 @@ function render() {
         return '.' === text.slice(-1) ? text : text + '.';
     });
 
-    return handlebars.compile(fileSystem.readFileSync(path.join(__dirname, 'resume.hbs'), "utf-8"))({
+    let index = handlebars.compile(fileSystem.readFileSync(path.join(__dirname, 'resume.hbs'), "utf-8"))({
         css: fileSystem.readFileSync(path.join(__dirname, 'style.css'), "utf-8"),
         resume: JSON.parse(fileSystem.readFileSync(path.join(__dirname, 'resume.json'), "utf-8"))
     });
+
+    if (!fileSystem.existsSync('docs')) {
+        fileSystem.mkdirSync('docs');
+    }
+
+    fileSystem.writeFileSync('docs/index.html', index);
 }
 
 function calculateDuration(startDate, endDate) {
