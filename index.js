@@ -5,12 +5,18 @@ const path = require('path');
 const docs = 'docs';
 
 let resume = fileSystem.readFileSync(core.getInput('resume') || 'resume.json');
+
+console.log("Rendering resume...");
 let html = index(resume);
 
 if (!fileSystem.existsSync(docs)) {
     fileSystem.mkdirSync(docs);
 }
+
+console.log("Persisting resume...");
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
+
+console.log("Creating pdf...");
 pdf(path.join(docs, 'resume.pdf'), html);
 
 function index(resume) {
@@ -60,15 +66,10 @@ function pdf(pdfFile, resume) {
         const puppeteer = require('puppeteer');
 
         const browser = await puppeteer.launch({headless: 'new'});
+
         const page = await browser.newPage();
-
         await page.emulateMediaType('print');
-
-        await page.goto(
-            `data:text/html;charset=UTF-8,${encodeURIComponent(html)}`,
-            {waitUntil: "networkidle0"}
-        );
-
+        await page.goto(`data:text/html;charset=UTF-8,${encodeURIComponent(html)}`);
         await page.pdf({
             path: pdfFile,
             format: 'Letter'
