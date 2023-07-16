@@ -1,16 +1,14 @@
-render();
-
 function render() {
     let fileSystem = require("fs");
     let path = require('path');
     let handlebars = require("handlebars");
 
     fileSystem
-        .readdirSync(path.join(__dirname, 'partials'))
+        .readdirSync('partials')
         .forEach(function (filename) {
             handlebars.registerPartial(
                 filename.split(".")[0],
-                fileSystem.readFileSync(path.join(__dirname, 'partials', filename), 'utf8'));
+                fileSystem.readFileSync(path.join('partials', filename), 'utf8'));
         });
 
     handlebars.registerHelper('format', function (startDate, endDate) {
@@ -20,7 +18,8 @@ function render() {
     handlebars.registerHelper('duration', function (startDate, endDate) {
         let duration = calculateDuration(startDate, endDate);
 
-        return `${pad(duration.years(), 'y')}${pad(duration.months(), 'm')}|`.replaceAll(' ', '&nbsp;');
+        return `${pad(duration.years(), 'y')}${pad(duration.months(), 'm')}|`
+            .replaceAll(' ', '&nbsp;');
     });
 
     handlebars.registerHelper('experience', function (work) {
@@ -28,7 +27,8 @@ function render() {
         let months = duration.months() > 5 ? ` ${duration.months()} months` : '';
 
         return duration.years() > 0
-            ? `${duration.years()} years${months} of experience`.replaceAll(' ', '&nbsp;')
+            ? `${duration.years()} years${months} of experience`
+                .replaceAll(' ', '&nbsp;')
             : '';
     });
 
