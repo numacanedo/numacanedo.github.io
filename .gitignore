@@ -2,5 +2,5 @@
 .idea
 docs
 dist
-index.html
+render.html
 node_modules

@@ -7,19 +7,19 @@ const docs = 'docs';
 let resume = fileSystem.readFileSync(core.getInput('resume') || 'resume.json');
 
 console.log("Rendering resume...");
-let html = index(resume);
+let html = render(resume);
 
 if (!fileSystem.existsSync(docs)) {
     fileSystem.mkdirSync(docs);
 }
 
 console.log("Persisting resume...");
-fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
+fileSystem.writeFileSync(path.join(docs, 'render.html'), html);
 
 console.log("Creating pdf...");
 pdf(path.join(docs, 'resume.pdf'), html);
 
-function index(resume) {
+function render(resume) {
     const handlebars = require("handlebars");
 
     fileSystem
