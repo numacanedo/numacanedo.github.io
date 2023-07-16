@@ -1,20 +1,12 @@
-const https = require("https");
-const fileSystem = require("fs");
-https
-    .get('https://gist.githubusercontent.com/numacanedo/8826eee009df27288db9ef2784e70bda/raw', resp => {
-        let resume = '';
+const fileSystem = require('fs');
 
-        resp.on("data", chunk => {
-            resume += chunk;
-        });
+let resume = fileSystem.readFileSync(process.argv[2]);
 
-        resp.on("end", () => {
-            if (!fileSystem.existsSync('docs')) {
-                fileSystem.mkdirSync('docs');
-            }
-            fileSystem.writeFileSync('docs/index.html', render(resume));
-        });
-    });
+if (!fileSystem.existsSync('docs')) {
+    fileSystem.mkdirSync('docs');
+}
+fileSystem.writeFileSync('docs/index.html', render(resume));
+
 
 function render(resume) {
     let path = require('path');

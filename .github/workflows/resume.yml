@@ -34,3 +34,9 @@ jobs:
           path: './docs'
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+      - name: Update Resume Gist
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          gist_id: 8826eee009df27288db9ef2784e70bda
+          file_path: resume.json
