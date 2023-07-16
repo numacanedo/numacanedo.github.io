@@ -1,11 +1,11 @@
-name: Publish resume
+name: Update gist
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  update-gist:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -1,4 +1,4 @@
-name: Publish resume
+name: Update resume
 
 on:
   schedule:
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  update-resume:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
