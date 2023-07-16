@@ -122,12 +122,7 @@ function pdf(pdfFile, resume) {
 
         console.log("Launching browser...");
         const browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                `--no-sandbox`,
-                `--disable-setuid-sandbox`
-            ],
-            slowMo: 50
+            headless: 'new'
         });
 
         console.log("Creating page...");
