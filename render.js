@@ -14,7 +14,7 @@ if (!fileSystem.existsSync(docs)) {
 }
 
 console.log("Persisting resume...");
-fileSystem.writeFileSync(path.join(docs, 'render.html'), html);
+fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
 console.log("Creating pdf...");
 pdf(path.join(docs, 'resume.pdf'), html);
@@ -75,7 +75,7 @@ function pdf(pdfFile, resume) {
         await page.emulateMediaType('print');
 
         console.log("Opening resume...");
-        await page.goto(`data:text/html;charset=UTF-8,${encodeURIComponent(html)}`);
+        await page.goto(`data:text/html;charset=UTF-8,${encodeURIComponent(resume)}`);
 
         console.log("Printing resume...");
         await page.pdf({

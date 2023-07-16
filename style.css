@@ -1,6 +1,6 @@
 body {
     background: #EEEEEE;
-    font: 12px "Arial", Arial, sans-serif;
+    font: 12px "Helvetica Neue", sans-serif;
     line-height: 1.4;
     margin: 40px 0;
 }
@@ -52,7 +52,7 @@ p {
 .basics .label {
     float: right;
     text-align: right;
-    font-weight: lighter;
+    font-weight: normal;
 }
 
 .sectionBlock {
@@ -64,7 +64,6 @@ p {
     width: 16%;
     vertical-align: top;
     display: inline-block;
-    background: gray;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 6px;
@@ -85,9 +84,12 @@ p {
 .sectionContent .sectionName {
     width: 100%;
     vertical-align: center;
-    background-color: lightgray;
+    background-color: #363c57;
+    color: white;
     font-weight: bold;
     font-size: larger;
+    border-radius: 3px;
+    padding-left: 5px;
 }
 
 .sectionContent .company {
@@ -98,7 +100,7 @@ p {
 
 .sectionContent .experience {
     float: right;
-    font-weight: lighter;
+    font-weight: normal;
     color: gray;
 }
 
