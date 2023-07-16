@@ -1,11 +1,11 @@
 const fileSystem = require('fs');
 const core = require('@actions/core');
 
-let resumeFile = process.argv[2] ? process.argv[2] : core.getInput('resume');
+let resumeInput = core.getInput('resume');
+let resumeFile = resumeInput === '' ? 'resume.json' : resumeInput;
 console.log("Reading file: " + resumeFile);
 
 let resume = fileSystem.readFileSync(resumeFile);
-console.log(resume.toString());
 
 if (!fileSystem.existsSync('docs')) {
     fileSystem.mkdirSync('docs');
