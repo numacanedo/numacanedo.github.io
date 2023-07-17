@@ -1,0 +1,43 @@
+Personal
+{{#with resume.basics}}
+    Name: {{name}}
+    Title: {{label}}
+    Email: {{email}}
+    Phone: {{phone}}
+    Location: {{location.city}}, {{location.region}}
+{{/with}}
+
+Summary
+● {{experience resume.work}}
+{{resume.basics.summary}}
+
+Skills
+{{#each resume.skills}}
+    {{name}}: {{#each keywords}}{{.}}{{#if @last}}.{{else}}, {{/if}}{{/each}}
+{{/each}}
+
+Education
+{{#each resume.education}}
+    Degree: {{{studyType}}}
+    Field of study: {{area}}
+    School: {{institution}}
+    Dates: {{format startDate endDate}}
+    {{#unless
+            @last}}----------------------------------------------------------------------------------------------------{{/unless}}
+{{/each}}
+
+Experience
+{{#each resume.work}}
+    Company: {{name}}
+    Dates: {{#if endDate}}{{format startDate endDate}}{{else}}{{format startDate "Present"}}{{/if}}
+    Title: {{position}}
+    Location: {{location}}
+    Summary: {{add-dot summary}}
+    Highlights:
+    {{#each highlights}}
+        ● {{add-dot .}}
+    {{/each}}
+    Technologies: {{add-dot technologies}}
+    {{#unless
+            @last}}----------------------------------------------------------------------------------------------------{{/unless}}
+{{/each}}
