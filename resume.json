@@ -152,7 +152,7 @@
       "position": "Staff Software Engineer",
       "url": "https://www.homedepot.com/",
       "startDate": "2020-04-01",
-      "summary": "",
+      "summary": "Excelled in developing high-availability Java applications and web services using Java, Spring and Bash Scripting. \nNuma's contributions include facilitating design discussions, establishing a cohesive team through documentation and meetings, and creating a framework that promotes best practices and observability. He automated manual tasks, reducing support time, and successfully migrated 30+ application repositories to the GitHub cloud.\nWith a focus on staying current with the latest technologies, Numa implemented reusable CI/CD pipelines and integrated them with services like Jira, Slack, Pivotal ClouFondry and Github actions. He is adept at architecting efficient information systems, resolving application performance issues, and advocating for clean code and DevOps practices.\nNuma is proficient in Docker, Jenkins, Pivotal Cloud Foundry, GCP, Big Query, and other tools, with expertise in platforms like GitHub, Jira, and IntelliJ. His expertise has significantly improved efficiency, performance, and code quality at Home Depot.",
       "highlights": [
         "Led features implementation that resulted in $50-80M estimated savings from store returns markdowns of non-assorted SKUs",
         "Facilitated design discussions to foster common understanding through documentation, including diagrams and visual representations for the order fulfillment domain",
