@@ -28,6 +28,7 @@ console.log('Persisting resume...');
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
 console.log('Creating text...');
+fileSystem.writeFileSync(path.join(docs, 'resume.json'), resume);
 fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-txt.hbs'));
 
 console.log('Creating pdf...');
