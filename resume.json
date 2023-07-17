@@ -5,7 +5,7 @@
     "image": "",
     "email": "mail@numacanedo.com",
     "phone": "(228) 918 0181",
-    "summary": "● 17 years developing and supporting enterprise applications\n● 17 years working with Java Technologies\n● 14 years of tech-leading expertise working with medium-sized teams\n● 5 years of devops experience working with CI/CD pipelines\n● 6 years of experience with Big Data and Cloud technologies\n● 6 years of experience working with PL/SQL and other Oracle tools\n● 3 years of experience working with ESB architecture\n● 17 years of experience with Basic Linux System Administration\n● Comprehensive understanding of network routing and load balancers\n● Industry Experience includes: Software Development, pharmaceuticals, retail, hospitality, financials and us government industries",
+    "summary": "● 17 years developing and supporting enterprise applications<br>● 17 years working with Java Technologies<br>● 14 years of tech-leading expertise working with medium-sized teams<br>● 5 years of devops experience working with CI/CD pipelines<br>● 6 years of experience with Big Data and Cloud technologies<br>● 6 years of experience working with PL/SQL and other Oracle tools<br>● 3 years of experience working with ESB architecture<br>● 17 years of experience with Basic Linux System Administration<br>● Comprehensive understanding of network routing and load balancers<br>● Industry Experience includes: Software Development, pharmaceuticals, retail, hospitality, financials and us government industries",
     "location": {
       "city": "Atlanta",
       "region": "GA",
@@ -183,7 +183,7 @@
       "url": "https://www.ncr.com/",
       "startDate": "2016-08-01",
       "endDate": "2020-04-30",
-      "summary": "NCR BSP is powered by an omnichannel platform, creating an open ecosystem of retail applications. Retailers can mix and match their choice of applications – whether from NCR, its partners, or 3rd party vendors – to rapidly deliver an exceptional customer experience that unleashes the full potential of retail everywhere",
+      "summary": "NCR BSP is powered by an omnichannel platform, creating an open ecosystem of retail applications. Retailers can mix and match their choice of applications whether from NCR, its partners, or 3rd party vendors to rapidly deliver an exceptional customer experience that unleashes the full potential of retail everywhere",
       "highlights": [
         "Led a mid-sized team of software engineers for the delivery, order, and consumer data management APIs",
         "Participated in the full development-cycle of high-volume micro-services for BSP products. BSP (Business Services Platform) represents NCR's new Software oriented vision",
