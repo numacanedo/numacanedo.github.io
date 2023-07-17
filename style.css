@@ -144,7 +144,7 @@ p {
         overflow-x: visible;
     }
 
-    .pagebreak {
+    .pageBreak {
         page-break-before: always;
     }
 }

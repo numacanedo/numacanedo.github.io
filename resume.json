@@ -186,7 +186,7 @@
       "summary": "NCR BSP is powered by an omnichannel platform, creating an open ecosystem of retail applications. Retailers can mix and match their choice of applications – whether from NCR, its partners, or 3rd party vendors – to rapidly deliver an exceptional customer experience that unleashes the full potential of retail everywhere",
       "highlights": [
         "Led a mid-sized team of software engineers for the delivery, order, and consumer data management APIs",
-        "Participated in the full development cycle of high-volume micro-services for BSP products. BSP (Business Services Platform) represents NCR's new Software oriented vision",
+        "Participated in the full development-cycle of high-volume micro-services for BSP products. BSP (Business Services Platform) represents NCR's new Software oriented vision",
         "Lead the research and development of core business services using state-of-the-art Big Data and cloud computing technologies",
         "Cross-functional data model design of use cases across NCR solutions portfolio. Including the Hospitality, Retail, and Financial industries",
         "Design and analysis of non-functional testing verification of Big Data services. Core scenarios included Performance, load, and scalability testing for 20 million consumer records",
@@ -214,7 +214,7 @@
         "Responsible for the design and implementation of session handling and concurrency",
         "Troubleshooting F5 Load balancer configuration issues",
         "Implementation of routing rules to legacy portal during data migration phase for not converted users",
-        "Integration with state workers portal thru SOAP and Restful web services",
+        "Integration with state workers portal through SOAP and Restful web services",
         "Implementation of proprietary web and database framework enhancements",
         "Analysis, design, implementation and testing of multiple Story Boards",
         "Automation of smoke and regression test cases with Selenium Web driver",
