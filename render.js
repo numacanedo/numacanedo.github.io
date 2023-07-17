@@ -4,6 +4,7 @@ const path = require('path');
 const docs = 'docs';
 const prettify = require('@liquify/prettify');
 const handlebars = require("handlebars");
+const yaml = require('json-to-pretty-yaml');
 
 let resume = fileSystem.readFileSync('resume.json');
 
@@ -29,6 +30,7 @@ fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
 console.log('Creating text...');
 fileSystem.writeFileSync(path.join(docs, 'resume.json'), resume);
+fileSystem.writeFileSync(path.join(docs, 'resume.yaml'), yaml.stringify(JSON.parse(resume.toString())));
 fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-txt.hbs'));
 
 console.log('Creating pdf...');
