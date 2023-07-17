@@ -9,7 +9,10 @@ let resume = fileSystem.readFileSync('resume.json');
 console.log('Rendering resume...');
 let html = prettify.formatSync(render(resume), {
     indentSize: 1,
-    indentChar: '\t'
+    indentChar: '\t',
+    markup: {
+        preserveText: true
+    }
 });
 
 if (!fileSystem.existsSync(docs)) {
