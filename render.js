@@ -10,6 +10,7 @@ console.log('Rendering resume...');
 let html = prettify.formatSync(render(resume), {
     indentSize: 1,
     indentChar: '\t',
+
     markup: {
         preserveText: true
     }
@@ -43,8 +44,7 @@ function render(resume) {
     handlebars.registerHelper('duration', function (startDate, endDate) {
         let duration = calculateDuration(startDate, endDate);
 
-        return `${pad(duration.years(), 'y')}${pad(duration.months(), 'm')}|`
-            .replaceAll(' ', '&nbsp;');
+        return `${pad(duration.years(), 'y')}${pad(duration.months(), 'm')}|`;
     });
 
     handlebars.registerHelper('experience', function (work) {
@@ -53,7 +53,6 @@ function render(resume) {
 
         return duration.years() > 0
             ? `${duration.years()} years${months} of experience`
-                .replaceAll(' ', '&nbsp;')
             : '';
     });
 

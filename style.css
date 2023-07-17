@@ -5,7 +5,6 @@ body {
     margin: 40px 0;
 }
 
-
 ul {
     margin-bottom: 0;
 }
@@ -97,7 +96,6 @@ p {
     font-weight: bold;
 }
 
-
 .sectionContent .experience {
     float: right;
     font-weight: normal;
@@ -106,18 +104,14 @@ p {
 
 .sectionContent .date {
     float: right;
-    font-family: "PT Mono";
+    font-family: "PT Mono", monospace;
 }
 
 .sectionContent .duration {
     float: right;
-    font-family: "PT Mono";
+    font-family: "PT Mono", monospace;
     font-weight: lighter;
     color: gray;
-}
-
-.sectionContent .separator {
-    height: 14px;
 }
 
 .sectionLine {
@@ -135,7 +129,6 @@ p {
 .jobBlock {
     page-break-inside: avoid;
 }
-
 
 @media print {
     body {

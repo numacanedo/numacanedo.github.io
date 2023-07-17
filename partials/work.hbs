@@ -1,5 +1,4 @@
 {{#if resume.work.length}}
-    <div class="pagebreak"/>
     <div class="sectionBlock">
         <div class='sectionContent'>
             <span class='sectionName'>Work Experience</span>
@@ -17,7 +16,6 @@
                         {{#if position}}<b>{{position}}</b>{{/if}}
                         {{> dates }}
                     </div>
-
                     {{#if summary}}<p class="summary" style="white-space: pre-line">{{add-dot summary}}</p>{{/if}}
                     {{#if highlights.length}}
                         <ul>
@@ -26,7 +24,11 @@
                             {{/each}}
                         </ul>
                     {{/if}}
-                    {{#if technologies}}<p><b>Technologies: </b>{{add-dot technologies}}</p>{{/if}}
+                    {{#if technologies}}
+                        <p>
+                            <b>Technologies:&nbsp;</b>{{add-dot technologies}}
+                        </p>
+                    {{/if}}
                     {{#unless @last}}
                         <div class='sectionLine'></div>
                     {{/unless}}
