@@ -99,9 +99,7 @@ function registerHelpers() {
         let duration = calculateDuration(work.at(-1).startDate);
         let months = duration.months() > 5 ? ` ${duration.months()} months` : '';
 
-        return duration.years() > 0
-            ? `${duration.years()} years${months} of experience`
-            : '';
+        return duration.years() > 0 ? `${duration.years()} years${months} of experience` : '';
     });
 
     handlebars.registerHelper('add-dot', function (text) {
@@ -121,9 +119,7 @@ function pad(duration, unit) {
 }
 
 function format(date) {
-    return isValid(date)
-        ? moment(date).format('MMM YYYY')
-        : date;
+    return isValid(date) ? moment(date).format('MMM YYYY') : date;
 }
 
 function isValid(date) {
