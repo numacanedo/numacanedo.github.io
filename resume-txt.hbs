@@ -32,9 +32,9 @@ Language
 
 Work Experience
 {{#each resume.work}}
-    {{#if endDate}}{{format startDate endDate}}{{else}}{{format startDate "Present"}}{{/if}}
-    {{name}}
+    {{name}} - {{location}}
     {{position}}
+    {{#if endDate}}{{format startDate endDate}}{{else}}{{format startDate "Present"}}{{/if}}
     {{#if summary}}{{add-dot summary}}{{else}}Description{{/if}}
     {{#each highlights}}
         + {{add-dot .}}
