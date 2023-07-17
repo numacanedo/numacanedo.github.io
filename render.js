@@ -15,7 +15,6 @@ console.log('Rendering resume...');
 let html = prettify.formatSync(render(resume), {
     indentSize: 1,
     indentChar: '\t',
-
     markup: {
         preserveText: true
     }
