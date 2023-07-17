@@ -1,25 +1,22 @@
 {{resume.basics.name}}
 {{resume.basics.label}}
 {{experience resume.work}}
-{{resume.basics.email}}
-{{resume.basics.phone}}
-{{resume.basics.location.city}}, {{resume.basics.location.region}}
+{{resume.basics.location.city}}, {{resume.basics.location.region}} | {{resume.basics.phone}} | {{resume.basics.email}}
 
 Professional Summary
 {{#with resume}}
     {{basics.summary}}
 {{/with}}
 
-Technical Skills
+Skills
 {{#each resume.skills}}
     + {{name}}: {{#each keywords}}{{.}}{{#if @last}}.{{else}}, {{/if}}{{/each}}
 {{/each}}
 
 Education
 {{#each resume.education}}
-    {{format startDate endDate}}
-    {{institution}}
-    {{{studyType}}} {{area}}
+    {{{studyType}}} in {{area}}
+    {{institution}}, {{format startDate endDate}}
 
 {{/each}}
 
@@ -33,8 +30,7 @@ Language
 Work Experience
 {{#each resume.work}}
     {{name}} - {{location}}
-    {{position}}
-    {{#if endDate}}{{format startDate endDate}}{{else}}{{format startDate "Present"}}{{/if}}
+    {{position}} | {{#if endDate}}{{format startDate endDate}}{{else}}{{format startDate "Present"}}{{/if}}
     {{#if summary}}{{add-dot summary}}{{else}}Description{{/if}}
     {{#each highlights}}
         + {{add-dot .}}
