@@ -2,11 +2,15 @@ const fileSystem = require('fs');
 const moment = require('moment');
 const path = require('path');
 const docs = 'docs';
+const prettify = require('@liquify/prettify');
 
 let resume = fileSystem.readFileSync('resume.json');
 
 console.log('Rendering resume...');
-let html = render(resume);
+let html = prettify.formatSync(render(resume), {
+    indentSize: 1,
+    indentChar: '\t'
+});
 
 if (!fileSystem.existsSync(docs)) {
     fileSystem.mkdirSync(docs);
