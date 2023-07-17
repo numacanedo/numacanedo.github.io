@@ -28,8 +28,7 @@ console.log('Persisting resume...');
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
 console.log('Creating text...');
-fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-plain.hbs'));
-fileSystem.writeFileSync(path.join(docs, 'resume-nerd.txt'), text(resume, 'resume-nerd.hbs'));
+fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-txt.hbs'));
 
 console.log('Creating pdf...');
 pdf(path.join(docs, 'resume.pdf'), html);
