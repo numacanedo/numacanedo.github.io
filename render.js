@@ -28,7 +28,8 @@ console.log('Persisting resume...');
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
 console.log('Creating text...');
-fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume));
+fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-plain.hbs'));
+fileSystem.writeFileSync(path.join(docs, 'resume-nerd.txt'), text(resume, 'resume-nerd.hbs'));
 
 console.log('Creating pdf...');
 pdf(path.join(docs, 'resume.pdf'), html);
@@ -48,8 +49,8 @@ function render(resume) {
     });
 }
 
-function text(resume) {
-    return handlebars.compile(fileSystem.readFileSync('resume-plain.hbs', 'utf-8'))({
+function text(resume, template) {
+    return handlebars.compile(fileSystem.readFileSync(template, 'utf-8'))({
         resume: JSON.parse(resume)
     });
 }

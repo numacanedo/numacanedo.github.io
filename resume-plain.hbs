@@ -1,4 +1,4 @@
-Personal
+Personal:
 {{#with resume.basics}}
     Name: {{name}}
     Title: {{label}}
@@ -7,37 +7,42 @@ Personal
     Location: {{location.city}}, {{location.region}}
 {{/with}}
 
-Summary
+Summary:
 ● {{experience resume.work}}
 {{resume.basics.summary}}
 
-Skills
+Skills:
 {{#each resume.skills}}
     {{name}}: {{#each keywords}}{{.}}{{#if @last}}.{{else}}, {{/if}}{{/each}}
 {{/each}}
 
-Education
+Education:
 {{#each resume.education}}
     Degree: {{{studyType}}}
     Field of study: {{area}}
     School: {{institution}}
     Dates: {{format startDate endDate}}
-    {{#unless
-            @last}}----------------------------------------------------------------------------------------------------{{/unless}}
+
 {{/each}}
 
-Experience
+Languages:
+{{#each resume.languages}}
+    Language: {{language}}
+    Proficiency: {{fluency}}
+
+{{/each}}
+
+Experience:
 {{#each resume.work}}
     Company: {{name}}
     Dates: {{#if endDate}}{{format startDate endDate}}{{else}}{{format startDate "Present"}}{{/if}}
     Title: {{position}}
     Location: {{location}}
-    Summary: {{add-dot summary}}
-    Highlights:
+    Summary: {{#if summary}}{{add-dot summary}}{{/if}}
+    Description:
     {{#each highlights}}
-        ● {{add-dot .}}
+        - {{add-dot .}}
     {{/each}}
     Technologies: {{add-dot technologies}}
-    {{#unless
-            @last}}----------------------------------------------------------------------------------------------------{{/unless}}
+
 {{/each}}
