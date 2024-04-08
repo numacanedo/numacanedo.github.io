@@ -36,6 +36,7 @@
         "Python",
         "GoLang",
         "JavaScript",
+        "TypeScript",
         "Ansi C",
         "QBasic"
       ]
@@ -199,7 +200,7 @@
         "Train and support other groups about core and business BSP services",
         "Support one of the principal customers, including  DeCA sales demo preparation"
       ],
-      "technologies": "NCR ODSP, Java, SpringBoot, Spring Data, Solr 7, Lucene, Hadoop, HBase, ZooKeeper, YARN, Swagger, Mockito, Bash Scripting, RESTful Micro Services, Maven, Linux, VirtualBox, Jenkins, GIT, BitBucket Repository, UML, JSON, YAML, Postman, Newman, JMeter, Mockaroo, SCRUM, Jira, HDP 2.5, AWS, Cucumber, BDD"
+      "technologies": "NCR ODSP, Java, SpringBoot, Spring Data, Solr 7, Lucene, Hadoop, HBase, ZooKeeper, YARN, Swagger, Mockito, Bash Scripting, RESTful Micro Services, Maven, Linux, VirtualBox, Jenkins, GIT, BitBucket Repository, UML, JSON, YAML, Postman, Newman, JMeter, Mockaroo, SCRUM, Jira, HDP 2.5, AWS, Cucumber, BDD, TypeScript"
     },
     {
       "name": "Arthur Lawrence (Deloitte US Contract)",
@@ -281,7 +282,6 @@
       ],
       "technologies": "Java & J2EE, Java QUARTZ, Web services, Windows Server 2003, Unix, Korn Shell Scripting, OAS 10g, PL/SQL, XSD, XML, WSDL, Oracle Advance Queuing, Perl, ABInitio, Static Routes, F5 Load balancer, SOFEA Web services, Mule, Datapower"
     },
-    
     {
       "name": "4THSource (ACH Alert LLC Client)",
       "company": "4THSource (ACH Alert LLC Client)",
