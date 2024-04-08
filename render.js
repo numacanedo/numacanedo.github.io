@@ -32,6 +32,10 @@ fileSystem.writeFileSync(path.join(docs, 'resume.json'), resume);
 fileSystem.writeFileSync(path.join(docs, 'resume.yaml'), yaml.stringify(JSON.parse(resume.toString())));
 fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-txt.hbs'));
 
+fileSystem.copyFile('profile.jpeg', path.join(docs, 'profile.jpeg'), (err) => {
+  if (!err) console.log('File was copied to destination');
+});
+
 console.log('Creating pdf...');
 pdf(path.join(docs, 'resume.pdf'), html);
 
