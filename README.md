@@ -1,4 +1,5 @@
-# resume
+![](./profile.jpeg)
+# Resume
 ## Available file formats
 - [html](https://numacanedo.github.io)
 - [txt](https://numacanedo.github.io/resume.txt)
