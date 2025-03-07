@@ -28,16 +28,16 @@ console.log('Persisting resume...');
 fileSystem.writeFileSync(path.join(docs, 'index.html'), html);
 
 console.log('Creating text...');
-fileSystem.writeFileSync(path.join(docs, 'json'), resume);
-fileSystem.writeFileSync(path.join(docs, 'yaml'), yaml.stringify(JSON.parse(resume.toString())));
-fileSystem.writeFileSync(path.join(docs, 'txt'), text(resume, 'resume-txt.hbs'));
+fileSystem.writeFileSync(path.join(docs, 'resume.json'), resume);
+fileSystem.writeFileSync(path.join(docs, 'resume.yaml'), yaml.stringify(JSON.parse(resume.toString())));
+fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-txt.hbs'));
 
 fileSystem.copyFile('profile.jpeg', path.join(docs, 'profile.jpeg'), (err) => {
   if (!err) console.log('File was copied to destination');
 });
 
 console.log('Creating pdf...');
-pdf(path.join(docs, 'pdf'), html);
+pdf(path.join(docs, 'resume.pdf'), html);
 
 function render(resume) {
     fileSystem
