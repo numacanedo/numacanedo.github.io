@@ -66,6 +66,7 @@ function pdf(pdfFile, resume) {
 
         console.log('Launching browser...');
         const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
             headless: 'new'
         });
 
