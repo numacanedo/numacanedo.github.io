@@ -13,7 +13,6 @@
     },
     "profiles": []
   },
-
   "skills": [
     {
       "name": "Operating Systems",
@@ -31,6 +30,7 @@
         "JDK 8",
         "JDK 11",
         "JDK 17",
+        "JDK 21",
         "Scala",
         "Groovy",
         "Bash Scripting",
@@ -38,6 +38,7 @@
         "GoLang",
         "JavaScript",
         "TypeScript",
+        "Node.js",
         "Ansi C",
         "QBasic"
       ]
@@ -49,6 +50,7 @@
         "Spring",
         "Spring boot",
         "Spring data",
+        "Micronaut",
         "Mockito",
         "Cucumber",
         "Vavr",
@@ -88,7 +90,8 @@
       "name": "App Servers",
       "level": "",
       "keywords": [
-        "Oracle Application Server(OAS),OC4J",
+        "Oracle Application Server(OAS)",
+        "OC4J",
         "Tomcat",
         "Web Sphere"
       ]
@@ -142,7 +145,8 @@
         "Jenkins",
         "GIT",
         "BitBucket",
-        "BDD"
+        "BDD",
+        "github actions"
       ]
     }
   ],
@@ -175,7 +179,7 @@
         "Documented and diagrammed existing and new applications",
         "Improved the unit test coverage for most of the apps the team owns"
       ],
-      "technologies": "Java, Groovy, Bash Scripting, Docker, Jenkins, Pivotal Cloud Foundry, GCP, Big Query, Pub/Sub, Spring Boot, Cassandra, Kafka, Elastic Search, Redis, Prometheus, Gradle, Swagger, Mockito, BDDs, Github, Jira, Miro, IntelliJ, Go Lang, Pivotal Tracker"
+      "technologies": "Java, Groovy, Bash Scripting, Docker, Jenkins, Pivotal Cloud Foundry, GCP, Big Query, Pub/Sub, Spring Boot, Cassandra, Kafka, Elastic Search, Redis, Prometheus, Gradle, Swagger, Mockito, BDDs, Github, Jira, Miro, IntelliJ, Go Lang, Pivotal Tracker, Node.js, github actions"
     },
     {
       "name": "NCR",
