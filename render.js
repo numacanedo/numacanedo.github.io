@@ -33,7 +33,7 @@ fileSystem.writeFileSync(path.join(docs, 'resume.yaml'), yaml.stringify(JSON.par
 fileSystem.writeFileSync(path.join(docs, 'resume.txt'), text(resume, 'resume-txt.hbs'));
 
 fileSystem.copyFile('profile.jpeg', path.join(docs, 'profile.jpeg'), (err) => {
-  if (!err) console.log('File was copied to destination');
+    if (!err) console.log('File was copied to destination');
 });
 
 console.log('Creating pdf...');
@@ -107,7 +107,7 @@ function registerHelpers() {
     });
 
     handlebars.registerHelper('add-dot', function (text) {
-        return '.' === text.slice(-1) ? text : text + '.';
+        return '.' === text?.slice(-1) ? text : text + '.';
     });
 }
 
