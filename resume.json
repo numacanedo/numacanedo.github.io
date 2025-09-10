@@ -11,7 +11,13 @@
       "region": "GA",
       "countryCode": "US"
     },
-    "profiles": []
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "numacanedo",
+        "url": "https://linkedin.com/in/numacanedo"
+      }
+    ]
   },
   "skills": [
     {
