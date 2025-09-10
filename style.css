@@ -74,6 +74,10 @@ p {
     display: inline-block;
 }
 
+.sectionContent {
+    width: 100%;
+}
+
 .sectionContent ul {
     padding-left: 20px;
     margin-top: 6px;
